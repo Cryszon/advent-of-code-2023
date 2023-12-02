@@ -2,14 +2,22 @@
   "name": "advent-of-code-2023",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "author": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
+    "main": "tsx ./src/main.ts",
     "test": "vitest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
+  "dependencies": {
+    "citty": "^0.1.5",
+    "tsx": "^4.6.2"
+  },
   "devDependencies": {
+    "@types/node": "^20.10.2",
+    "typescript": "^5.3.2",
     "vitest": "^0.34.6"
   }
 }
