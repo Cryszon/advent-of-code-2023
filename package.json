@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "citty": "^0.1.5",
+    "consola": "^3.2.3",
     "tsx": "^4.6.2"
   },
   "devDependencies": {
