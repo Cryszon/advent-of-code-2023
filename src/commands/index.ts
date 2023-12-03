@@ -1,5 +1,5 @@
-import sumOfPossibleGameIds from "./sumOfPossibleGameIds.js";
-import sumCalibrationValues from "./sumCalibrationValues.js";
+import { sumOfPossibleGameIds } from "./sumOfPossibleGameIds.js";
+import { sumCalibrationValues } from "./sumCalibrationValues.js";
 
 export const commands = {
   "sum-calibration-values": sumCalibrationValues,

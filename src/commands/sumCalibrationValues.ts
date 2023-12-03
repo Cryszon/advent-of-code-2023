@@ -3,7 +3,7 @@ import { readFile } from "fs/promises";
 import { findCalibractionValue } from "../day1/day1.js";
 import { resolve } from "path";
 
-export default defineCommand({
+export const sumCalibrationValues = defineCommand({
   meta: {
     name: "sum-calibration-values",
     version: "1.0.0",

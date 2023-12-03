@@ -1,9 +1,9 @@
 import { defineCommand } from "citty";
 import { readFile } from "fs/promises";
 import { resolve } from "path";
-import { sumOfPossibleGameIds } from "../day2/day2.js";
+import { sumOfPossibleGameIds as sumOfPossibleGameIds2 } from "../day2/day2.js";
 
-export default defineCommand({
+export const sumOfPossibleGameIds = defineCommand({
   meta: {
     name: "sum-of-possible-game-ids",
     version: "1.0.0",
@@ -19,7 +19,7 @@ export default defineCommand({
   },
   async run({ args }) {
     const input = (await readFile(resolve(args.document))).toString();
-    const result = sumOfPossibleGameIds(input);
+    const result = sumOfPossibleGameIds2(input);
 
     console.log(`Sum of possible game IDs is ${result}`);
   },
