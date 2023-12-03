@@ -46,6 +46,7 @@ function parseGames(input: string): Game[] {
   });
 }
 
+//#region Part 1
 /**
  * Check if a given game is valid. A game is considered valid if none of the
  * rounds had more cubes of a specific color shown than what's in the bag.
@@ -78,3 +79,40 @@ export function sumOfPossibleGameIds(input: string): number {
 
   return validGamesIdSum;
 }
+//#endregion
+
+//#region Part 2
+export function minimumNumberOfCubesNeededToPlayAGame(
+  game: Game
+): Record<string, number> {
+  const cubesNeeded: Record<string, number> = {};
+
+  for (const round of game.rounds) {
+    for (const [color, amount] of Object.entries(round.cubesShown)) {
+      cubesNeeded[color] = Math.max(cubesNeeded[color] ?? 0, amount);
+    }
+  }
+  return cubesNeeded;
+}
+
+export function sumOfPowerOfSets(input: string): number {
+  const games = parseGames(input);
+
+  // Loop through each game
+  const result = games.reduce(
+    (acc, game) =>
+      // Combine results of powers of each game
+      acc +
+      // Multiply each number of cubes needed for this game. We
+      // use`Object.values()` since we only care about the number of the cubes,
+      // not their colors.
+      Object.values(minimumNumberOfCubesNeededToPlayAGame(game)).reduce(
+        (acc, x) => acc * x,
+        1
+      ),
+    0
+  );
+
+  return result;
+}
+//#endregion
